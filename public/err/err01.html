@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTTP 404 - Not Found</title>
+    <link rel="stylesheet" href="/style/err.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1 class="heading">Hey!</h1>
+  <p class="text">The page you tried to visit (<span id="urlRequest" class="url"></span> was not found.<br>
+Return to the homepage <a href="/">here.</a> Otherwise, here's a Pokémon to cheer you up (or, we hope)</p>
+  <div class="image-container">
+    <img src="https://placeholdmon.vercel.app/?name=*" alt="A" id="img">
+    <div id="overlay-text" class="overlay-text"></div>
+  </div>
+  <script src="/src/err.js"></script>
+</body>
+</html>

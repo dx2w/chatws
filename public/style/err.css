@@ -1,0 +1,132 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    background-color: #FBF7FD;
+    display: flex;
+    flex-direction: column;
+    color: #1C191C;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 60vw;
+}
+
+.heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-weight: 500;
+    font-optical-sizing: auto;
+    text-align: center;
+}
+
+.text {
+    font-size: 1rem;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.text .url {
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+a {
+    text-decoration: none;
+    color: #161516;
+    transition-duration: 0.2s;
+    position: relative;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #63458A;
+    transition: width 0.2s ease;
+}
+
+a:hover::after, a:focus::after, a:visited:hover::after {
+    width: 100%;
+}
+
+a:hover {
+    color: #63458A;
+    transition-duration: 0.2s;
+}
+
+a:visited {
+    color: #161516;
+    transition-duration: 0.2s;
+}
+
+a:visited:hover {
+    color: #63458A;
+    transition-duration: 0.2s;
+}
+
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    max-height: 50%;
+}
+
+img {
+    max-width: 97.5%;
+    max-height: 97.5%;
+    height: auto;
+    border-radius: 8px;
+    filter: blur(15px) grayscale(1) brightness(0.66);
+    transition: filter 0.2s ease, max-width 0.2s, max-height 0.2s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+img:hover {
+    max-width: 100%;
+    max-height: 100%;
+    filter: blur(0) grayscale(0);
+    transition: filter 0.2s, max-width 0.2s, max-height 0.2s;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FBF7FD;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.2s ease;
+}
+
+.image-container:hover .overlay-text {
+    opacity: 0;
+}

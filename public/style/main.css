@@ -1,0 +1,128 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    background-color: #1C191C;
+    display: flex;
+    flex-direction: column;
+    color: #FBF7FD;
+}
+
+main {
+    flex: 1;
+    margin-left: 20vw;
+    transition: margin-left 0.3s;
+}
+
+.side {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 20vw;
+    min-width: 200px;
+    max-width: 350px;
+    border-right: 0.1vw solid #232026;
+    background: #161516;
+    transition: width 0.3s, min-width 0.3s, max-width 0.3s;
+    overflow-x: hidden;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 1rem;
+    gap: 0;
+}
+
+.side.collapsed {
+    width: 0;
+    min-width: 0;
+    max-width: 0;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .side {
+        display: none;
+    }
+    main {
+        margin-left: 0 !important;
+    }
+}
+
+.side.collapsed + main {
+    margin-left: 0;
+}
+
+.side-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 16px;
+    transition: background 0.2s, box-shadow 0.2s;
+    position: relative;
+    margin-bottom: 0;
+    border-bottom: none;
+    box-sizing: border-box;
+}
+
+.side-item + .side-item {
+    position: relative;
+}
+
+.side-item + .side-item::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: -0.5rem;
+    height: 1px;
+    background: #8C888D;
+    margin: 0 auto;
+}
+
+.side-item:hover, .side-item:focus {
+    background: #232026;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+}
+
+.side-item-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: brightness(50%);
+    transition: filter 0.2s;
+}
+
+.side-item:first-child .side-item-img {
+    filter: brightness(75%);
+}
+
+.side-x {
+    margin-left: auto;
+    color: #888;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 0.5rem;
+    transition: color 0.2s;
+    user-select: none;
+}
+
+.side-x:hover {
+    color: #ff4c4c;
+}
